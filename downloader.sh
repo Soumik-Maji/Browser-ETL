@@ -24,7 +24,7 @@ echo "Extracting Browser-ETL repo contents & Setting up project structure..."
 tar -xzf main.tar.gz
 cp -r Browser-ETL-main/. .
 rm -rf Browser-ETL-main
-rm "modules/.gitkeep" "resources/.gitkeep" ".gitignore" "main.tar.gz" "downloader.sh"
+rm "modules/.gitkeep" "resources/.gitkeep" "main.tar.gz" "downloader.sh"
 
 chmod +x updater.sh
 ./updater.sh
