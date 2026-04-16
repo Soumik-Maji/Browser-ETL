@@ -5,7 +5,7 @@ Recommended: It requires some file serving mechanism like vscode's live-server e
 Alternately you can also put them in the index.html to make it work with out any file serving but that might create functions with same name issue. **Working to fix this currently.**
 
 Below is the downloader script which you can use to setup projects automatically.
-[Click to download it directly](https://raw.githubusercontent.com/Soumik-Maji/Browser-ETL/refs/heads/main/downloader.sh)
+[Click to download it directly](https://github.com/Soumik-Maji/Browser-ETL/releases/latest/download/downloader.sh)
 
 ```
 #!/bin/bash
@@ -34,7 +34,7 @@ echo "Extracting Browser-ETL repo contents & Setting up project structure..."
 tar -xzf main.tar.gz
 cp -r Browser-ETL-main/. .
 rm -rf Browser-ETL-main
-rm "modules/.gitkeep" "resources/.gitkeep" ".gitignore" "main.tar.gz" "downloader.sh"
+rm "modules/.gitkeep" "resources/.gitkeep" "main.tar.gz" "downloader.sh"
 
 chmod +x updater.sh
 ./updater.sh

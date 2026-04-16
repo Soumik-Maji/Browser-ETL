@@ -1,3 +1,5 @@
+// ------------------------- THIS IS A SAMPLE FILE -------------------------
+
 // import {ObjectArray} from "./modules/BETL/index.js";
 // import relevant things from modules dir
 
