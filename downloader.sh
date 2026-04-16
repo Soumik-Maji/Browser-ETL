@@ -2,7 +2,7 @@
 set -e
 
 read -n 1 -p "Project will be created as a sibling to this bash script. OK with it? (y/n): " answer
-echo "" # Move to a new line
+echo ""
 if [[ "$answer" == [Yy] ]]; then
     echo "Cool. Let's begin."
 else
@@ -23,7 +23,7 @@ curl -fL --progress-bar "https://github.com/Soumik-Maji/Browser-ETL/archive/refs
 echo "Extracting Browser-ETL repo contents & Setting up project structure..."
 tar -xzf main.tar.gz
 cp -r Browser-ETL-main/. .
-rm -rf Browser-ETL-main
+rm -rf "Browser-ETL-main" ".github"
 rm "modules/.gitkeep" "resources/.gitkeep" "main.tar.gz" "downloader.sh"
 
 chmod +x updater.sh
