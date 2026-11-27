@@ -4,7 +4,7 @@ set -e
 read -n 1 -p "Project will be created in the present working directory. OK with it? (y/n): " answer
 echo ""
 if [[ "$answer" == [Yy] ]]; then
-    echo "Cool. Let's begin."
+    echo "Let's begin."
 else
     echo "Figure out the solution then come back."
     exit 0

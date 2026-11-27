@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+cd "$(dirname "${BASH_SOURCE[0]}")"
 rm -rf modules/*
 cd modules
 echo "Downloading & extracting modules from github artifacts..."
@@ -12,21 +13,11 @@ download_module() {
   curl -fL --progress-bar "https://github.com/Soumik-Maji/${name}/releases/latest/download/${name}.tar.gz" -o "${name}.tar.gz" || { echo "Failed to download ${name}"; exit 1; }
   tar -xzf "${name}.tar.gz"
   rm "${name}.tar.gz"
+  rm -f "${name}/LICENSE" "${name}/README.md"
 }
 download_module "Exporter"
 download_module "file-reader"
 download_module "toJSON-convertor"
 download_module "BETL"
-
-cd ..
-read -n 1 -p "Remove LICENSE & README files to save space? (y/n): " cleanup
-echo ""
-if [[ "$cleanup" == [Yy] ]]; then
-    find . -name "LICENSE" -delete
-    find . -name "README.md" -delete
-    echo "Cleaned up."
-else
-    echo "Thanks for keeping them."
-fi
 
 echo "Module update COMPLETED!"

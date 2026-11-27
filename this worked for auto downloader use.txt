@@ -1,1 +1,0 @@
-printf 'yBrowser-ETL\nn' | ./downloader.sh

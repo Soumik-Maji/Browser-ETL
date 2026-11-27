@@ -16,7 +16,7 @@ jobs:
           mkdir build
           cp downloader.sh build/
           cd build
-          printf 'yBrowser-ETL\nn' | bash ./downloader.sh
+          printf 'yBrowser-ETL\n' | bash ./downloader.sh
           zip -r ../Browser-ETL.zip Browser-ETL
 
       - name: Create Release
