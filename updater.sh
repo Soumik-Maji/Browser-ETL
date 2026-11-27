@@ -2,6 +2,10 @@
 set -e
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
+echo "Working in: $(pwd)"
+echo "Wiping modules/ in 4 sec. Ctrl+C to abort."
+sleep 4
+
 rm -rf modules/*
 cd modules
 echo "Downloading & extracting modules from github artifacts..."
