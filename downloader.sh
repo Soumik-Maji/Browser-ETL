@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-read -n 1 -p "Project will be created as a sibling to this bash script. OK with it? (y/n): " answer
+read -n 1 -p "Project will be created in the present working directory. OK with it? (y/n): " answer
 echo ""
 if [[ "$answer" == [Yy] ]]; then
     echo "Cool. Let's begin."
@@ -26,7 +26,7 @@ cp -r Browser-ETL-main/. .
 rm -rf "Browser-ETL-main" ".github"
 rm "modules/.gitkeep" "resources/.gitkeep" "main.tar.gz" "downloader.sh"
 
-chmod +x updater.sh
+chmod 544 updater.sh
 ./updater.sh
 
 echo "Initial set up COMPLETED!"

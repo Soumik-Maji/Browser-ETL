@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "downloader.sh"
 
 jobs:
   build-artifact:
@@ -13,12 +11,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Build Project zip
+        run: |
+          mkdir build
+          cp downloader.sh build/
+          cd build
+          printf 'yBrowser-ETL\nn' | bash ./downloader.sh
+          zip -r ../Browser-ETL.zip Browser-ETL
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: release-${{ github.run_number }}
-          name: Downloader Script
-          files: downloader.sh
+          name: Release
+          files: |
+            downloader.sh
+            Browser-ETL.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
